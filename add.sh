@@ -1,15 +1,35 @@
 #!/bin/bash
+ read -p "Enter Date:" date
+ read -p "Enter Month:" month
 
-#1.A
+ if (( ($month <=6 & $date <=20) & ($month >=3 % $date >=20) ))
+  then
+     if(( ($month == 4 & $date ==31) | ($month == 6 & $date ==31) ))
+           then
+            echo $date $month "false";
+         else
+	     echo $date $month "true";
+         fi
 
-echo "1 ft= 12 in";
-echo "then 42 in= $((42 / 12)) ft";
+ elif(( ($month >=3 & $month <6) & ($date >=20 & $date <=31) ))
+ then 
+    if(( ($month ==4 & $date ==31) | ($month ==6 & $date ==31) ))
+           then
+            echo $date $month "false";
+          else
+            echo $date $month "true";
+          fi
 
-
-#2.B
-   echo "Rectangular Plot of 60 feet x 40 feet in meters is";
-   echo "$((60 / 3))meter x $((40 / 3))meter";
-
-
-#3.C
-    echo "this type of 25 plotes is equal to $(( $((60 * 40 * 25)) / 43560 )) acres"
+elif (( ($month >4 & $date <6) & ($date <=31) ))
+  then
+        if(( ($month ==4 & $date ==31) | ($month ==6 & $date ==31) ))
+           then
+            echo $date $month "false";
+        else 
+            echo $date $month "true";
+ fi
+        else
+            echo "false";
+        fi
+            
+         
