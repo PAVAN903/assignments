@@ -1,19 +1,18 @@
 #!/bin/bash
     
-    read -p "enter leap year" year
-	   if(( year % 4 == 0 ))
-            then
-             if(( year % 100 == 0 ))
-               then
-                 if(( year % 400 == 0 ))
-                  then
-                    echo "leap year";
-                  else
-                    echo "not a leap year";
-                  fi
-              else
-                 echo "leap year";
-            fi
-         else
-            echo "not a leap year";
-         fi
+    read -p "enter one digit number" num
+
+         case $num in 
+              0) echo $num "zero";;
+              1) echo $num "one";;
+              2) echo $num "two";;
+              3) echo $num "three";;
+              4) echo $num "four";;
+              5) echo $num "five";;
+              6) echo $num "six";;
+              7) echo $num "seven";;
+              8) echo $num "eight";;
+              9) echo $num "nine";;
+         esac
+
+
