@@ -1,12 +1,19 @@
 #!/bin/bash
     
-    read -p "enter the number between 1 & 7" day
-     case $day in 
-     1)echo "monday";;
-     2)echo "tuesday";;
-     3)echo "wednesday";;
-     4)echo "thursday";;
-     5)echo "fridayday";;
-     6)echo "saturday";;    
-     7)echo "sunday";
-     esac   
+    read -p "enter leap year" year
+	   if(( year % 4 == 0 ))
+            then
+             if(( year % 100 == 0 ))
+               then
+                 if(( year % 400 == 0 ))
+                  then
+                    echo "leap year";
+                  else
+                    echo "not a leap year";
+                  fi
+              else
+                 echo "leap year";
+            fi
+         else
+            echo "not a leap year";
+         fi
